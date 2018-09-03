@@ -6,4 +6,8 @@ public class Calculadora {
 		return a + b;
 	}
 
+	public int subtrair(int a, int b) {
+		return 0;
+	}
+
 }
