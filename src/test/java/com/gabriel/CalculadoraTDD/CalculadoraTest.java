@@ -6,6 +6,8 @@ import org.junit.Test;
 import junit.framework.Assert;
 
 public class CalculadoraTest {
+	
+	Calculadora calc = new Calculadora();
 
 	@Test
 	public void deveSomarDoisValores() {
@@ -13,7 +15,6 @@ public class CalculadoraTest {
 		int a = 5;
 		int b = 3;
 		
-		Calculadora calc = new Calculadora();
 		
 		// acao
 		int total = calc.somar(a, b);
@@ -28,7 +29,6 @@ public class CalculadoraTest {
 		int a = 5;
 		int b = 3;
 		
-		Calculadora calc = new Calculadora();
 		
 		// acao
 		int total = calc.subtrair(a, b);
@@ -44,8 +44,6 @@ public class CalculadoraTest {
 		int a = 5;
 		int b = 3;
 		
-		Calculadora calc = new Calculadora();
-		
 		// acao
 		int total = calc.multiplicar(a, b);
 		
@@ -60,13 +58,21 @@ public class CalculadoraTest {
 		int a = 10;
 		int b = 5;
 		
-		Calculadora calc = new Calculadora();
-		
 		// acao
 		int total = calc.dividir(a, b);
 		
 		//verificacao
 		Assert.assertEquals(2, total);
+	}
+	
+	@Test(NaoPodeDividirPorZeroException.class)
+	public void naoDeveDividirValorPorZero() {
+		int a = 10;
+		int b = 0; 
+		
+		
+		int total = calc.dividir(a, b);
 		
 	}
+	
 }
