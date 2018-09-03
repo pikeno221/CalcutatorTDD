@@ -19,6 +19,6 @@ public class CalculadoraTest {
 		int total = calc.somar(a, b);
 		
 		//verificacao
-		Assert.assertEquals(8.8, total);
+		Assert.assertEquals(8, total);
 	}
 }
