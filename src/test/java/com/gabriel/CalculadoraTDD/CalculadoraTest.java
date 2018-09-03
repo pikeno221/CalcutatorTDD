@@ -3,6 +3,8 @@ package com.gabriel.CalculadoraTDD;
 
 import org.junit.Test;
 
+import com.gabriel.CalculadoraTDD.exception.NaoPodeDividirPorZeroException;
+
 import junit.framework.Assert;
 
 public class CalculadoraTest {
@@ -53,7 +55,7 @@ public class CalculadoraTest {
 	}
 	
 	@Test
-	public void deveDividirDoisValores() {
+	public void deveDividirDoisValores() throws NaoPodeDividirPorZeroException {
 		// cenario
 		int a = 10;
 		int b = 5;
@@ -65,11 +67,10 @@ public class CalculadoraTest {
 		Assert.assertEquals(2, total);
 	}
 	
-	@Test(NaoPodeDividirPorZeroException.class)
-	public void naoDeveDividirValorPorZero() {
+	@Test(expected = NaoPodeDividirPorZeroException.class)
+	public void naoDeveDividirValorPorZero() throws NaoPodeDividirPorZeroException {
 		int a = 10;
-		int b = 0; 
-		
+		int b = 2; 
 		
 		int total = calc.dividir(a, b);
 		
